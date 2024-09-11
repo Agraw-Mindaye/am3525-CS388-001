@@ -16,10 +16,6 @@ The following **required** functionality is completed:
 * [x] Button displayed on screen
 * [x] Toast with message appears when button is pressed 
 
-The following **optional** features are implemented:
-
-* [ ] List anything else that you can get done to improve the app functionality!
-
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
@@ -32,7 +28,7 @@ GIF created with [Kap](https://getkap.co/) for macOS
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2024] [Codepath]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
