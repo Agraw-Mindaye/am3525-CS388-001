@@ -13,23 +13,22 @@ Time spent: **3** hours spent in total <!-- Replace 'X' with the number of hours
 The following **required** functionality is completed:
 
 - [x] **User can see a number displayed on the screen. The number starts at 0.**
-    - ![Image/GIF showing the initial display of the number](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+  - <img src='normalFunctional.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 - [x] **User can tap on a button to see the number displayed increase by 1.**
-    - ![Image/GIF showing the number increase on button tap](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+  - <img src='normalFunctional.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Stretch Features
 
 The following **optional** features are implemented:
 
-- [x] User can exchange number of taps accumulated for upgrades (e.g., each tap counts as 2 taps).
+- [x] User can exchange 10 taps accumulated for upgrades (e.g., each tap counts as 2 taps).
     - <img src='doubleTap.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-- [x] User can customize the app's theme (e.g., using a dog background and a paw print button).
+- [x] User can customize the app's theme at a cost of 10 taps (e.g., using a dog background and a paw print button).
   - <img src='customIcon.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 - [ ] User has progressively difficult goals to reach in terms of number of taps accumulated.
-    - ![Image/GIF showing goals and progress](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
 
 ## Notes
 
@@ -39,7 +38,7 @@ a steep learning curve, but besides that it was an enjoyable lab.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2024] [Codepath]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
