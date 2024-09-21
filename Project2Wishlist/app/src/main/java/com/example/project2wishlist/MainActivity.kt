@@ -1,8 +1,8 @@
-// MainActivity.kt
 package com.example.project2wishlist
 
 import WishlistAdapter
 import WishlistItem
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -13,41 +13,36 @@ import com.example.project2wishlist.R
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var wishlistAdapter: WishlistAdapter
-    private val wishlistItems = mutableListOf<WishlistItem>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recyclerView)
-        wishlistAdapter = WishlistAdapter(wishlistItems)
-        recyclerView.adapter = wishlistAdapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        val recyclerView = findViewById<RecyclerView>(R.id.Rv) // get RecyclerView
+        val items = mutableListOf<WishlistItem>() // get the items
+        val adapter = WishlistAdapter(items) // create adaptr
 
-        // Set up input fields and button
-        val etItemName: EditText = findViewById(R.id.etItemName)
-        val etItemPrice: EditText = findViewById(R.id.etItemPrice)
-        val etItemUrl: EditText = findViewById(R.id.etItemUrl)
-        val btnAddItem: Button = findViewById(R.id.btnAddItem)
+        recyclerView.adapter = adapter // attach adapter to recycler view
+        recyclerView.layoutManager = LinearLayoutManager(this) // set layout manager to position items
 
-        // Handle button click to add a new item
-        btnAddItem.setOnClickListener {
-            val name = etItemName.text.toString()
-            val price = etItemPrice.text.toString()
-            val url = etItemUrl.text.toString()
+        val itemName: EditText = findViewById(R.id.ItemNameEt)
+        val itemPrice: EditText = findViewById(R.id.ItemPriceEt)
+        val itemUrl: EditText = findViewById(R.id.ItemUrlEt)
+        val addBtn: Button = findViewById(R.id.AddItemBtn)
+
+        addBtn.setOnClickListener {
+            val name = itemName.text.toString()
+            val price = itemPrice.text.toString()
+            val url = itemUrl.text.toString()
 
             if (name.isNotEmpty() && price.isNotEmpty() && url.isNotEmpty()) {
                 val newItem = WishlistItem(name, price, url)
-                wishlistItems.add(newItem)
-                wishlistAdapter.notifyItemInserted(wishlistItems.size - 1)
+                items.add(newItem)
+                adapter.notifyItemInserted(items.size - 1)
 
-                // Clear input fields
-                etItemName.text.clear()
-                etItemPrice.text.clear()
-                etItemUrl.text.clear()
+                // clear the input fields
+                itemName.text.clear()
+                itemPrice.text.clear()
+                itemUrl.text.clear()
             }
         }
     }
