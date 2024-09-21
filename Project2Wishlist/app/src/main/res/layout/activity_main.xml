@@ -1,0 +1,39 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/ItemNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Name" />
+
+    <EditText
+        android:id="@+id/ItemPriceEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Price" />
+
+    <EditText
+        android:id="@+id/ItemUrlEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item URL" />
+
+    <Button
+        android:id="@+id/AddItemBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Item" />
+
+    <!-- RecyclerView for displaying the wishlist -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
