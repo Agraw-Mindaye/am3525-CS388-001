@@ -2,7 +2,7 @@
 
 Submitted by: **Agraw Mindaye**
 
-**Name of your app** is a wishlist app that helps the user keep track of what they want to buy.
+**Wishlist** is a wishlist app that helps the user keep track of what they want to buy.
 
 Time spent: **3** hours spent in total
 
@@ -32,7 +32,7 @@ GIF created with [Kap](https://getkap.co/) for macOS
 ## Notes
 
 The app was similar to Lab2 (Codepathmail), as they both implemented a Recyclerview. The difficulties
-I had involved using the correct imports and setting the correct views, as the 
+I had involved using the correct imports and setting the correct views 
 
 ## License
 
