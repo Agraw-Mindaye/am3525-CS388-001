@@ -1,11 +1,19 @@
 [
     {
+        "merged": "/Users/agraw/.gradle/daemon/7.3.3/com.codepath.articlesearch.app-mergeDebugResources-28:/layout/activity_detail.xml",
+        "source": "/Users/agraw/.gradle/daemon/7.3.3/com.codepath.articlesearch.app-main-31:/layout/activity_detail.xml"
+    },
+    {
         "merged": "com.codepath.articlesearch.app-mergeDebugResources-28:/layout/item_article.xml",
         "source": "com.codepath.articlesearch.app-main-31:/layout/item_article.xml"
     },
     {
-        "merged": "com.codepath.articlesearch.app-mergeDebugResources-28:/layout/activity_main.xml",
-        "source": "com.codepath.articlesearch.app-main-31:/layout/activity_main.xml"
+        "merged": "/Users/agraw/.gradle/daemon/7.3.3/com.codepath.articlesearch.app-mergeDebugResources-28:/layout/activity_main.xml",
+        "source": "/Users/agraw/.gradle/daemon/7.3.3/com.codepath.articlesearch.app-main-31:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/agraw/.gradle/daemon/7.3.3/com.codepath.articlesearch.app-mergeDebugResources-28:/layout/item_article.xml",
+        "source": "/Users/agraw/.gradle/daemon/7.3.3/com.codepath.articlesearch.app-main-31:/layout/item_article.xml"
     },
     {
         "merged": "com.codepath.articlesearch.app-mergeDebugResources-28:/layout/activity_detail.xml",
