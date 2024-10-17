@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.project3flixter.OnListFragmentInteractionListener
+import com.example.project4flixter.OnListFragmentInteractionListener
 import com.example.project4flixter.R
 
 class PopularMoviesRecyclerViewAdapter(

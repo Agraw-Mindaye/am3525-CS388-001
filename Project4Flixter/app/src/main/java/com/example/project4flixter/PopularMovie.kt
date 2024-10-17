@@ -2,7 +2,6 @@ package com.example.project4flixter
 
 import com.google.gson.annotations.SerializedName
 
-// Model for storing a single movie from the TMDb API
 class PopularMovie {
     @SerializedName("title")
     var title: String? = null

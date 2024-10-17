@@ -2,7 +2,6 @@ package com.example.project4flixter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.project3flixter.PopularMoviesFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

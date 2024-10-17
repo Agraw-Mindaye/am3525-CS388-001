@@ -1,4 +1,4 @@
-package com.example.project3flixter
+package com.example.project4flixter
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,6 +14,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.project4flixter.MovieDetailsActivity
+import com.example.project4flixter.OnListFragmentInteractionListener
 import com.example.project4flixter.PopularMovie
 import com.example.project4flixter.PopularMoviesRecyclerViewAdapter
 import com.example.project4flixter.R

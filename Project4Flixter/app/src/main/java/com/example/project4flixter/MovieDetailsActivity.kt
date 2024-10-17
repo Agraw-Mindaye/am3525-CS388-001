@@ -5,7 +5,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.project4flixter.R
 
 class MovieDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +18,9 @@ class MovieDetailsActivity : AppCompatActivity() {
         val posterPath = intent.getStringExtra("poster_path")
 
         val titleView = findViewById<TextView>(R.id.movie_title)
-        val overviewView = findViewById<TextView>(R.id.movie_overview)
+        val overviewView = findViewById<TextView>(R.id.movie_description)
         val releaseDateView = findViewById<TextView>(R.id.release_date)
-        val voteAverageView = findViewById<TextView>(R.id.vote_average)
+        val voteAverageView = findViewById<TextView>(R.id.rating)
         val posterImageView = findViewById<ImageView>(R.id.movie_poster)
 
         titleView.text = movieTitle
