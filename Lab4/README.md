@@ -27,8 +27,8 @@ The following **required** functionality is completed:
 
 The following **stretch** functionality is implemented:
 
-- [] (+2 pts bonus) **Enhanced the UI for the application with customized fonts and ConstraintLayout for each of the screens.**
-    - ![Image/GIF showing custom UI styling](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+- [x] (+2 pts bonus) **Enhanced the UI for the application with customized fonts and ConstraintLayout for each of the screens.**
+  - <img src='stretch-customFont.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> <!-- Replace this link with your actual image/GIF link -->
 
 ## Notes
 
