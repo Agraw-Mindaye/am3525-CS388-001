@@ -1,10 +1,12 @@
-# Android Project 4 - *Name of App Here*
+# Android Project 4 - *Flixter+*
 
-Submitted by: **Your Name Here**
+Submitted by: **Agraw Mindaye**
 
-**Name of your app** is a movie browsing app that allows users to browse ... [TODO]
+**Name of your app** is a movie browsing app that allows users to browse popular
+movies using The Movie Database API API. Each movie is shown with its poster and title. When
+clicked, users can see more details, including a description, release date, and rating.
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
