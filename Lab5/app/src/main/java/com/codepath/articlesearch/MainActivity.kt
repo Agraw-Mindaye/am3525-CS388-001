@@ -116,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     articleAdapter.notifyDataSetChanged()
+
                     swipeRefreshLayout.isRefreshing = false // Stop refresh animation
 
                 } catch (e: JSONException) {
