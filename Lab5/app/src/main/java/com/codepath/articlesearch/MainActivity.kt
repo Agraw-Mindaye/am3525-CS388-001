@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.codepath.articlesearch.databinding.ActivityMainBinding
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -30,16 +31,14 @@ private val ARTICLE_SEARCH_URL =
 class MainActivity : AppCompatActivity() {
     private val articles = mutableListOf<DisplayArticle>()
     private lateinit var articlesRecyclerView: RecyclerView
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(R.layout.activity_main)
 
         articlesRecyclerView = findViewById(R.id.articles)
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
 
         // Set up ArticleAdapter with articles
         val articleAdapter = ArticleAdapter(this, articles)
@@ -48,6 +47,11 @@ class MainActivity : AppCompatActivity() {
         articlesRecyclerView.layoutManager = LinearLayoutManager(this).also {
             val dividerItemDecoration = DividerItemDecoration(this, it.orientation)
             articlesRecyclerView.addItemDecoration(dividerItemDecoration)
+        }
+
+        // Set up Swipe to Refresh
+        swipeRefreshLayout.setOnRefreshListener {
+            fetchDataFromApi(articleAdapter)
         }
 
         // Set up flow to listen to database changes
@@ -68,7 +72,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Fetch articles from the API
+        // Initial data fetch from API
+        fetchDataFromApi(articleAdapter)
+    }
+
+    // Method to fetch data from API and refresh RecyclerView
+    private fun fetchDataFromApi(articleAdapter: ArticleAdapter) {
         val client = AsyncHttpClient()
         client.get(ARTICLE_SEARCH_URL, object : JsonHttpResponseHandler() {
             override fun onFailure(
@@ -78,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                 throwable: Throwable?
             ) {
                 Log.e(TAG, "Failed to fetch articles: $statusCode")
+                swipeRefreshLayout.isRefreshing = false // Stop refresh animation
             }
 
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
@@ -106,12 +116,13 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     articleAdapter.notifyDataSetChanged()
+                    swipeRefreshLayout.isRefreshing = false // Stop refresh animation
 
                 } catch (e: JSONException) {
                     Log.e(TAG, "Exception: $e")
+                    swipeRefreshLayout.isRefreshing = false // Stop refresh animation
                 }
             }
         })
-
     }
 }
