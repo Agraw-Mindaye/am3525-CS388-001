@@ -6,7 +6,7 @@ Submitted by: **Agraw Mindaye** <!-- Replace 'Your Name Here' with your actual n
 
 **NYT Article Search Pt 2** is an app designed to maintain functionality while offline by caching the latest data fetched from the NYT API, ensuring a smooth user experience even without network connectivity.
 
-Time spent: **2.5** hours spent in total <!-- Replace 'X' with the number of hours you spent on this project -->
+Time spent: **5** hours spent in total <!-- Replace 'X' with the number of hours you spent on this project -->
 
 ## Application Features
 
@@ -27,17 +27,18 @@ The following **required** functionality is completed:
 
 The following **stretch** functionality is implemented:
 
-- [ ] (2 pts) **Add Swipe To Refresh to force a new network call to get new data**
-  - ![GIF showing Swipe to Refresh](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+- [x] (2 pts) **Add Swipe To Refresh to force a new network call to get new data**
+  - <img src='swipeRefresh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> <!-- Replace this link with your actual image/GIF link -->
 
-- [ ] (2 pts) **Add setting toggle for user to create preference for caching data or not (Using Shared Preferences)**
-  - ![GIF showing Shared Preferences for caching](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+- [x] (2 pts) **Add setting toggle for user to create preference for caching data or not (Using Shared Preferences)**
+  - <img src='cachingPreferences.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> <!-- Replace this link with your actual image/GIF link -->
+
 
 - [ ] (+3 pts) **Implement a Search UI to filter current RecyclerView entries or fetch data from the search API with query**
   - ![GIF showing Search UI functionality](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
 
-- [ ] (2 pts) **Listen to network connectivity changes and create a UI to let people know they are offline and automatically reload new data if connectivity returns**
-  - ![GIF showing network connectivity detection](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+- [x] (2 pts) **Listen to network connectivity changes and create a UI to let people know they are offline and automatically reload new data if connectivity returns**
+  - <img src='networkConnectivity.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> <!-- Replace this link with your actual image/GIF link -->
 
 ## Notes
 
