@@ -1,0 +1,7 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreferenceCompat
+        android:key="cache_preference"
+        android:title="Cache Articles"
+        android:summary="Enable or disable caching of articles"
+        android:defaultValue="true" />
+</PreferenceScreen>

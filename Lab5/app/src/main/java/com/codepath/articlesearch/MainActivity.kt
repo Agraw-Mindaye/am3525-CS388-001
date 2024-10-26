@@ -1,5 +1,7 @@
 package com.codepath.articlesearch
 
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,20 +10,14 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.codepath.articlesearch.databinding.ActivityMainBinding
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import kotlinx.coroutines.Dispatchers.IO
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
 import org.json.JSONException
-
-fun createJson() = Json {
-    isLenient = true
-    ignoreUnknownKeys = true
-    useAlternativeNames = false
-}
 
 private const val TAG = "MainActivity/"
 private val SEARCH_API_KEY = BuildConfig.API_KEY
@@ -29,78 +25,58 @@ private val ARTICLE_SEARCH_URL =
     "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${SEARCH_API_KEY}"
 
 class MainActivity : AppCompatActivity() {
-    private val articles = mutableListOf<DisplayArticle>()
-    private lateinit var articlesRecyclerView: RecyclerView
+    private lateinit var networkReceiver: NetworkReceiver
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var articlesRecyclerView: RecyclerView
+    private lateinit var articleAdapter: ArticleAdapter
+    private val articles = mutableListOf<DisplayArticle>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        articlesRecyclerView = findViewById(R.id.articles)
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
+        articlesRecyclerView = findViewById(R.id.articles)
 
-        // Set up ArticleAdapter with articles
-        val articleAdapter = ArticleAdapter(this, articles)
+        // Setup RecyclerView and adapter
+        articleAdapter = ArticleAdapter(this, articles)
         articlesRecyclerView.adapter = articleAdapter
-
         articlesRecyclerView.layoutManager = LinearLayoutManager(this).also {
             val dividerItemDecoration = DividerItemDecoration(this, it.orientation)
             articlesRecyclerView.addItemDecoration(dividerItemDecoration)
         }
 
-        // Set up Swipe to Refresh
-        swipeRefreshLayout.setOnRefreshListener {
-            fetchDataFromApi(articleAdapter)
-        }
+        // Setup Swipe to Refresh
+        swipeRefreshLayout.setOnRefreshListener { fetchDataFromApi() }
 
-        // Set up flow to listen to database changes
-        lifecycleScope.launch {
-            (application as ArticleApplication).db.articleDao().getAll().collect { databaseList ->
-                databaseList.map { entity ->
-                    DisplayArticle(
-                        entity.headline,
-                        entity.articleAbstract,
-                        entity.byline,
-                        entity.mediaImageUrl
-                    )
-                }.also { mappedList ->
-                    articles.clear()
-                    articles.addAll(mappedList)
-                    articleAdapter.notifyDataSetChanged()
-                }
-            }
+        // Register network receiver
+        networkReceiver = NetworkReceiver { isConnected ->
+            handleNetworkChange(isConnected)
         }
+        registerReceiver(networkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
 
-        // Initial data fetch from API
-        fetchDataFromApi(articleAdapter)
+        // Initial data load
+        fetchDataFromApi()
     }
 
-    // Method to fetch data from API and refresh RecyclerView
-    private fun fetchDataFromApi(articleAdapter: ArticleAdapter) {
+    private fun fetchDataFromApi() {
+        swipeRefreshLayout.isRefreshing = true
         val client = AsyncHttpClient()
         client.get(ARTICLE_SEARCH_URL, object : JsonHttpResponseHandler() {
-            override fun onFailure(
-                statusCode: Int,
-                headers: Headers?,
-                response: String?,
-                throwable: Throwable?
-            ) {
+            override fun onFailure(statusCode: Int, headers: Headers?, response: String?, throwable: Throwable?) {
                 Log.e(TAG, "Failed to fetch articles: $statusCode")
-                swipeRefreshLayout.isRefreshing = false // Stop refresh animation
+                swipeRefreshLayout.isRefreshing = false
             }
 
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
-                Log.i(TAG, "Successfully fetched articles: $json")
                 try {
                     val parsedJson = createJson().decodeFromString(
                         SearchNewsResponse.serializer(),
                         json.jsonObject.toString()
                     )
 
-                    // Save the articles to the database
                     parsedJson.response?.docs?.let { list ->
-                        lifecycleScope.launch(IO) {
+                        lifecycleScope.launch(Dispatchers.IO) {
                             (application as ArticleApplication).db.articleDao().deleteAll()
                             (application as ArticleApplication).db.articleDao().insertAll(
                                 list.map {
@@ -115,15 +91,52 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    articleAdapter.notifyDataSetChanged()
+                    lifecycleScope.launch {
+                        (application as ArticleApplication).db.articleDao().getAll().collect { databaseList ->
+                            articles.clear()
+                            articles.addAll(databaseList.map { entity ->
+                                DisplayArticle(
+                                    entity.headline,
+                                    entity.articleAbstract,
+                                    entity.byline,
+                                    entity.mediaImageUrl
+                                )
+                            })
+                            articleAdapter.notifyDataSetChanged()
+                        }
+                    }
 
-                    swipeRefreshLayout.isRefreshing = false // Stop refresh animation
+                    swipeRefreshLayout.isRefreshing = false
 
                 } catch (e: JSONException) {
                     Log.e(TAG, "Exception: $e")
-                    swipeRefreshLayout.isRefreshing = false // Stop refresh animation
+                    swipeRefreshLayout.isRefreshing = false
                 }
             }
         })
+    }
+
+    private fun handleNetworkChange(isConnected: Boolean) {
+        if (isConnected) {
+            Log.d(TAG, "Network is back online, reloading data.")
+            Snackbar.make(swipeRefreshLayout, "Back online! Refreshing data...", Snackbar.LENGTH_SHORT).show()
+            fetchDataFromApi() // Fetch data again when connectivity is restored
+        } else {
+            Log.d(TAG, "Network is offline.")
+            Snackbar.make(swipeRefreshLayout, "You are offline!", Snackbar.LENGTH_INDEFINITE)
+                .setAction("Retry") { fetchDataFromApi() }
+                .show()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(networkReceiver)
+    }
+
+    private fun createJson() = Json {
+        isLenient = true
+        ignoreUnknownKeys = true
+        useAlternativeNames = false
     }
 }
