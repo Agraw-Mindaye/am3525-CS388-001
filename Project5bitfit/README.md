@@ -1,9 +1,9 @@
-# Android Project 5 - *Bitfit part 1*
+# Android Project 5 - *Bitfit-part1*
 
 Submitted by: **Agraw Mindaye**
 
 **Bitfit** is a health metrics app that allows users to their calories. Users will be able to enter details
-regarding the food and the number of calories it contains. They will also be able to see their paste entries,
+regarding the food and the number of calories it contains. They will also be able to see their past entries,
 giving them a timeline of their food intake.
 
 Time spent: **6** hours spent in total
