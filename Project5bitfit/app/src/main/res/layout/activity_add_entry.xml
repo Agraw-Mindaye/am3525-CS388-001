@@ -1,0 +1,30 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/food_name_eT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter food name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/calories_eT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter calorie count"
+        android:inputType="number" />
+
+    <!-- Add Entry Button -->
+    <Button
+        android:id="@+id/add_entry_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Entry"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
