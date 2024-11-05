@@ -1,7 +1,0 @@
-com.codepath.articlesearch.test.app-androidTest-0 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/build/generated/res/resValues/androidTest/debug
-com.codepath.articlesearch.test.app-androidTest-1 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/build/generated/res/rs/androidTest/debug
-com.codepath.articlesearch.test.app-mergeDebugAndroidTestResources-2 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.codepath.articlesearch.test.app-mergeDebugAndroidTestResources-3 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.codepath.articlesearch.test.app-merged_res-4 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/build/intermediates/merged_res/debugAndroidTest
-com.codepath.articlesearch.test.app-androidTest-5 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/src/androidTest/res
-com.codepath.articlesearch.test.app-androidTestDebug-6 /Users/agraw/Library/Mobile Documents/com~apple~CloudDocs/NJIT /Courses/Fall 2024/CS388/am3525-CS388-001/Lab4/app/src/androidTestDebug/res
