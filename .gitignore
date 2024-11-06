@@ -1,5 +1,10 @@
 .idea/
+.gradle
 /.idea/*
 .DS_Store
-# Ignore build directories
-**/build/
+build
+
+
+**/build/ # Ignore build directories
+
+apikey.properties
