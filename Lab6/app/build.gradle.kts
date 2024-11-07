@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-parcelize")
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.10" // added plugin for serialization
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.24" // added plugin for serialization
 }
 
 val apikeyPropertiesFile = rootProject.file("apikey.properties")
@@ -65,7 +65,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.code.gson:gson:2.11.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
     testImplementation(libs.junit)

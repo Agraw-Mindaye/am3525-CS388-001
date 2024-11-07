@@ -2,6 +2,7 @@ package com.example.lab6
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,8 +53,10 @@ class MainActivity : AppCompatActivity() {
                 response: String?,
                 throwable: Throwable?
             ) {
-                Log.e(TAG, "Failed to fetch articles: $statusCode")
-            }
+                Log.e(TAG, "Failed to fetch articles: $statusCode, response: $response")
+                runOnUiThread {
+                    Toast.makeText(this@MainActivity, "Failed to fetch articles. Please try again later.", Toast.LENGTH_SHORT).show()
+                }            }
 
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
                 Log.i(TAG, "Successfully fetched articles: $json")
