@@ -6,7 +6,7 @@ Submitted by: **Agraw Mindaye** <!-- Replace 'Your Name Here' with your actual n
 
 **NYT ArticleSearch Pt 3** is an app that combines the Best Setting Books app and the Article Search app, allowing users to navigate between books and articles seamlessly.
 
-Time spent: **5** hours spent in total <!-- Replace 'X' with the number of hours you spent on this project -->
+Time spent: **6** hours spent in total <!-- Replace 'X' with the number of hours you spent on this project -->
 
 ## Application Features
 
@@ -34,13 +34,15 @@ The following **stretch** functionality is implemented:
     - Displays a list of popular articles on a custom home screen.
     - ![GIF showing Home screen with popular articles](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
 
-- [ ] (2 pts) **Respond to device orientation changes without resetting the application**
+- [x] (2 pts) **Respond to device orientation changes without resetting the application**
     - Ensures app content maintains its state across orientation changes.
-    - ![GIF showing orientation change handling](http://i.imgur.com/link/to/your/gif/file.gif) <!-- Replace this link with your actual image/GIF link -->
+    - <img src='orientation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> <!-- Replace this link with your actual image/GIF link -->
 
 ## Notes
 
-Describe any challenges encountered while building the app. <!-- Replace this with your specific challenges and experiences -->
+I had trouble configuring my build files to properly work with the starter code. 
+For example my plugins were not compatible with the dependencies. 
+Besides that, the lab itself wasn't too difficult. 
 
 ## Resources
 
