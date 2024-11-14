@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/avgCaloriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Average Calories:" />
+
+    <TextView
+        android:id="@+id/minCaloriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min Calories:" />
+
+    <TextView
+        android:id="@+id/maxCaloriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max Calories:" />
+
+
+</LinearLayout>
