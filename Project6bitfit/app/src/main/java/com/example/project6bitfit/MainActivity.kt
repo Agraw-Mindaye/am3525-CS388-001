@@ -2,67 +2,57 @@ package com.example.project6bitfit
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.project6bitfit.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var adapter: FoodEntryAdapter
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        // initialize RecyclerView to display entries
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_entries)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        Log.d("MainActivity", "onCreate called")
 
-        adapter = FoodEntryAdapter(mutableListOf())
-        recyclerView.adapter = adapter
+        // initialize BottomNavigationView
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
 
-        // initialize database and DAO
-        val foodEntryDao = FoodDatabase.getDatabase(this).foodEntryDao()
-
-        // update RecyclerView with chnages
-        lifecycleScope.launch {
-            foodEntryDao.getAllEntries().collect { entries ->
-                adapter.updateEntries(entries)
-            }
-        }
-
-        // add a new entry
-        val newEntryButton = findViewById<Button>(R.id.new_entry_btn)
-        newEntryButton.setOnClickListener {
-            val intent = Intent(this, AddEntryActivity::class.java)
-            startActivity(intent)
-        }
-
-        // clear entries
-        val clearAllButton = findViewById<Button>(R.id.clear_btn)
-        clearAllButton.setOnClickListener {
-            lifecycleScope.launch {
-                withContext(Dispatchers.IO) {
-                    foodEntryDao.clearAllEntries()
+        // listener for BottomNavigationView
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_dashboard -> {
+                    replaceFragment(DashboardFragment())
+                    true
                 }
+                R.id.nav_entry -> {
+                    replaceFragment(EntryFragment())
+                    true
+                }
+                else -> false
             }
         }
 
+        // set dashboard as default
+        bottomNavigationView.selectedItemId = R.id.nav_dashboard
     }
 
-    override fun onResume() {
-        super.onResume()
-        // refresh and show new entry
-        val foodEntryDao = FoodDatabase.getDatabase(this).foodEntryDao()
-        lifecycleScope.launch {
-            foodEntryDao.getAllEntries().collect { entries ->
-                adapter.updateEntries(entries)
-            }
-        }
+    private fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.commit()
     }
 }
 
