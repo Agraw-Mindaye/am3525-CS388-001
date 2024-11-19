@@ -1,8 +1,8 @@
-# Android Project 6 - *Name of App Here*
+# Android Project 6 - *Bitfit*
 
 Submitted by: **Agraw Mindaye**
 
-**Name of your app** is a health metrics app that allows users to track their calories. 
+**Bitfit** is a health metrics app that allows users to track their calories. 
 Users will be able to enter details regarding the food and the number of calories it contains. 
 In addition to seeing their past entries, users can see a summary of their entries,
 including the average, maximum, and minimum record of their entries.
