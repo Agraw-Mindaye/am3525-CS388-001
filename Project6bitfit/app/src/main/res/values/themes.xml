@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Project5bitfit" parent="Base.Theme.Project5bitfit" />
+    <style name="Theme.Project6bitfit" parent="Base.Theme.Project5bitfit" />
 </resources>
