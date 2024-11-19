@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
             resultText.text = "Guess $count: $result" // show user the current status of their guess
 
             if (result == "OOOO") {
-                resultText.text = "Congratulations, you guessed correctly!"
+                resultText.text = "Congratulations, you guessed correctly! The correct word was: $target"
+                resetButton.visibility = View.VISIBLE
                 submitButton.isEnabled = false
             } else if (count >= maxGuess) {
                 submitButton.isEnabled = false
