@@ -1,7 +1,9 @@
 package com.example.project5bitfit
 
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         // initialize RecyclerView to display entries
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_entries)
+        recyclerView.addItemDecoration(ItemSpacingDecoration(spaceHeight = 300)) // spacing for each entry
+
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter = FoodEntryAdapter(mutableListOf())
@@ -65,4 +69,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+// function to add spacing between entries
+class ItemSpacingDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        outRect.bottom = spaceHeight
+    }
+}
+
+
 
