@@ -99,15 +99,18 @@
 
 <!--- List the issues you completed this sprint -->
 
-1. **Meal Plan Creation**: Users can create a meal plan by creating recipes and adding them to specific days
-2. **Recipe Search**: Users can search for a previously created meal by entering ingredients
-3. **Shopping List Generator**: Users can generate shopping list based on meal plan
+1. **Create the base layout of the app**:  <br>
+    ***Added login and sign up functionality*** <br>
+    ***Added bottom navigation*** <br>
+2. **Create functionality for meal plan creation**: <br>
+    ***Added functionality for users to create recipes*** <br>
+    ***Added functionality for users to save recipes to a specific day*** <br>
 
 ### Current Progress GIF
 <!--- [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. 
 Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.] -->
 
-- <img src="progressMilestone1.gif" width=600>
+- <img src='progressMilestone1.gif' width=600>
 
 <br>
 
