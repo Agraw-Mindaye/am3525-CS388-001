@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/recipe_title_input"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recipes"
-        android:textSize="24sp" />
+        android:hint="Recipe Title" />
 
+    <EditText
+        android:id="@+id/recipe_calories_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Calories"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/recipe_ingredients_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingredients (comma-separated)" />
+
+    <Button
+        android:id="@+id/add_recipe_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Recipe" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recipes_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>
