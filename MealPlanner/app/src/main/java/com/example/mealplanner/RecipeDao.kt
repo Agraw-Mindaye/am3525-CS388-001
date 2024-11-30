@@ -23,5 +23,8 @@ interface RecipeDao {
     @Query("SELECT * FROM recipes ORDER BY title ASC")
     fun getAllRecipes(): List<Recipe>
 
+    @Query("DELETE FROM recipes")
+    fun clearAllRecipes()
+
 
 }
