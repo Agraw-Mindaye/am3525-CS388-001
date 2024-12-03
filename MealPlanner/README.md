@@ -104,10 +104,11 @@
 
 <!--- List the issues you completed this sprint -->
 
-1. **Create the base layout of the app**:  <br>
+1. **Create functionality for login/signup**  <br>
+2. **Create the base layout of the app**:  <br>
     ***Added login and sign up functionality*** <br>
     ***Added bottom navigation*** <br>
-2. **Create functionality for meal plan creation**: <br>
+3. **Create functionality for meal plan creation**: <br>
     ***Added functionality for users to create recipes*** <br>
     ***Added functionality for users to save recipes to a specific day*** <br>
 
