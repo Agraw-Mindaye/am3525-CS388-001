@@ -28,18 +28,21 @@
 
 **Required Features**
 
-1. **Meal Plan Creation**: Users can create a meal plan by creating recipes and adding them to specific days
-2. **Recipe Search**: Users can search for a previously created meal by entering ingredients  
-3. **Shopping List Generator**: Users can generate shopping list based on meal plan
+1. - [x] Login/SignUp: Users can login and/or sign up with an account
+2. - [x] Meal Plan Creation: Users can create a meal plan by creating recipes and adding them to specific days
+3. - [x] Nutritional Infromation: Each recipe displays nutritional details
+4. - [ ] Shopping List Generator: Users can generate shopping list based on meal plan
 
 **Optional Features**
 
-1. **Nutritional Infromation**: Each recipe displays nutritional details
-2. **Notifications**: Users can set reminders to prepare meals and/or shop for ingredients
-3. **Offline mode**: Users can access their meal plans regardless of internet connection
+1. - [ ] Recipe Search: Users can search for a previously created meal by entering ingredients 
+2. - [ ] Notifications: Users can set reminders to prepare meals and/or shop for ingredients
+3. - [ ] Offline mode: Users can access their meal plans regardless of internet connection
 
 ### 2. Screen Archetypes
 
+- [Login/SignUp Screen]
+  - [Users can login and/or sign up with an account]
 - [Recipe Creation Screen]
   - [Users can create recipes with ingredients]
   - [Users can also search for a recipe]
@@ -60,6 +63,8 @@
 
 **Flow Navigation** (Screen to Screen)
 
+- [Login/SignUp Screen]
+  - [Login and/or sign up]
 - [Recipe Creation Screen]
   - [Add recipe]
   - [Search for recipe]
