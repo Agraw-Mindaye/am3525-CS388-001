@@ -94,11 +94,11 @@
 
 <!--- [Add screenshot of your Project Board with the issues that you've been working on for this unit's milestone] -->
 
-- <img src="currentIssuesMilestone1.png" width=600>
+- <img src="finishedIssues-Milestone2.png" width=600>
 
 <!--- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] -->
 
-- <img src="nextSprintIssues.png" width=600>
+- <img src="nextMilestoneIssues.png" width=600>
 
 ## Issues worked on this sprint
 
