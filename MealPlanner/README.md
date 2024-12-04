@@ -30,7 +30,7 @@
 
 1. - [x] Login/SignUp: Users can login and/or sign up with an account
 2. - [x] Meal Plan Creation: Users can create a meal plan by creating recipes and adding them to specific days
-3. - [x] Nutritional Infromation: Each recipe displays nutritional details
+3. - [x] Nutritional Information: Each recipe displays nutritional details
 4. - [ ] Shopping List Generator: Users can generate shopping list based on meal plan
 
 **Optional Features**
@@ -116,7 +116,7 @@
 <!--- [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. 
 Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.] -->
 
-- <img src='progressMilestone1.gif' width=600>
+- <img src='Milestone1Progress.gif' width=600>
 
 <br>
 
