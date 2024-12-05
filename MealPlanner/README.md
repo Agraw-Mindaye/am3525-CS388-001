@@ -126,13 +126,21 @@ Make sure your giphys are not duplicated and clearly show the change from Sprint
 
 [Add screenshot of your Project Board with the updated status of issues for Milestone 3. 
 Note that these should include the updated issues you worked on for this sprint and not be a duplicate of Milestone 2 Project board.] 
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+- <img src="finishedIssues-Milestone3.png" width=600>
 
 ## Completed user stories
 
-- List the completed user stories from this unit
-- List any pending user stories / any user stories you decided to cut
-from the original requirements
+<!--- List the completed user stories from this unit -->
+
+1. **Create functionality for shopping list**  <br>
+    ***Added functionality for users to be able to gnerate a shopping list based on a saved meal plan*** <br
+2. **Create functionality for recipe search**:  <br>
+   ***Added functionality for users to search for on online recipe*** <br>
+
+- List any pending user stories / any user stories you decided to cut from the original requirements
+
+1. **Create functionality for recipe search**:  <br>
+    ***This functionality wasn't cut, but it was changed to show online recipes instead of user-created recipes*** <br
 
 [Add video/gif of your current application that shows build progress]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
