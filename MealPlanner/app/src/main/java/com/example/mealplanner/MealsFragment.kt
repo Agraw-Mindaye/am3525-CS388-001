@@ -29,9 +29,15 @@ class MealsFragment : Fragment() {
         val unsavedRecyclerView = view.findViewById<RecyclerView>(R.id.unsaved_recipes_recycler_view)
         val mealsRecyclerView = view.findViewById<RecyclerView>(R.id.meals_recycler_view)
 
-        // Set up adapters for RecyclerViews
-        unsavedAdapter = RecipeAdapter { recipe -> showDaySelectionDialog(recipe) }
-        mealsAdapter = RecipeAdapter { /* Optionally handle meal item clicks here */ }
+        // set up RecyclerViews and adapters
+        unsavedAdapter = RecipeAdapter { recipe ->
+            showDaySelectionDialog(recipe) // for unsaved recipes
+        }
+        mealsAdapter = RecipeAdapter { recipe ->
+            if (recipe.day != null) {
+                showShoppingList(recipe) // show shopping list for saved meals
+            }
+        }
 
         unsavedRecyclerView.adapter = unsavedAdapter
         unsavedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -41,15 +47,18 @@ class MealsFragment : Fragment() {
 
         val recipeDao = AppDatabase.getDatabase(requireContext()).recipeDao()
 
-        // Load unsaved recipes
+        // load unsaved recipes
         lifecycleScope.launch {
             val unsavedRecipes = withContext(Dispatchers.IO) { recipeDao.getUnsavedRecipes() }
             unsavedAdapter.submitList(unsavedRecipes)
         }
 
-        // Load meals
+        // load saved meals
         lifecycleScope.launch {
             val meals = withContext(Dispatchers.IO) { recipeDao.getAllRecipes().filter { it.day != null } }
+            meals.forEach { meal -> // Debugging meals
+                println("Meal: ${meal.title}, Day: ${meal.day}")
+            }
             mealsAdapter.submitList(meals)
         }
 
@@ -71,19 +80,27 @@ class MealsFragment : Fragment() {
         val recipeDao = AppDatabase.getDatabase(requireContext()).recipeDao()
 
         lifecycleScope.launch(Dispatchers.IO) {
+            // update recipe and turn it to a saved meal
             val updatedRecipe = recipe.copy(day = day)
             recipeDao.updateRecipe(updatedRecipe)
 
-            // Reload unsaved recipes and meals
-            val unsavedRecipes = recipeDao.getUnsavedRecipes()
             val meals = recipeDao.getAllRecipes().filter { it.day != null }
+            val unsavedRecipes = recipeDao.getUnsavedRecipes()
 
             withContext(Dispatchers.Main) {
-                unsavedAdapter.submitList(unsavedRecipes)
                 mealsAdapter.submitList(meals)
+                unsavedAdapter.submitList(unsavedRecipes)
                 Toast.makeText(requireContext(), "Recipe saved to $day!", Toast.LENGTH_SHORT).show()
             }
         }
     }
-}
 
+    private fun showShoppingList(recipe: Recipe) {
+        // get the ingredients withouttheir  measurements
+        val cleanIngredients = recipe.ingredients.split(",").map { it.trim() }
+
+        // show the shopping list
+        ShoppingListDialogFragment.newInstance(cleanIngredients)
+            .show(parentFragmentManager, "shopping_list_dialog")
+    }
+}

@@ -9,6 +9,6 @@ data class Recipe(
     val id: Int = 0,
     val title: String,
     val calories: Int,
-    val ingredients: String, // Store ingredients as a comma-separated string
-    val day: String? = null // Day of the week (e.g., "Monday"), null if unsaved
+    val ingredients: String, // store ingredients
+    val day: String? = null // day of week
 )

@@ -21,7 +21,7 @@ class RecipeAdapter(
 
         fun bind(recipe: Recipe) {
             val displayTitle = if (recipe.day != null) {
-                "${recipe.title} (${recipe.day})" // Append the day if it's saved as a meal
+                "${recipe.title} (${recipe.day})"
             } else {
                 recipe.title
             }
