@@ -1,39 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/recipe_title_input"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Recipe Title" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/recipe_calories_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Calories"
-        android:inputType="number" />
+        <!-- Manual Recipe Addition -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a Recipe"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/recipe_ingredients_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingredients (comma-separated)" />
+        <EditText
+            android:id="@+id/recipe_title_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title" />
 
-    <Button
-        android:id="@+id/add_recipe_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Recipe" />
+        <EditText
+            android:id="@+id/recipe_calories_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Calories"
+            android:inputType="number" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recipes_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-</LinearLayout>
+        <EditText
+            android:id="@+id/recipe_ingredients_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingredients (comma-separated)" />
+
+        <Button
+            android:id="@+id/add_recipe_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Recipe" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/local_recipes_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- API Search -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search Recipes via API"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter ingredients (comma-separated)" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search Recipes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/api_results_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>

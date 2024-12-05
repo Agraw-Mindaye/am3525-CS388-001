@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -6,6 +8,19 @@ plugins {
     id("kotlin-kapt") // Enables annotation processing for Kotlin
 }
 
+// Read API Key from local.properties
+fun getApiKeyFromLocalProperties(): String {
+    val props = Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use { stream ->
+            props.load(stream)
+        }
+    }
+    return props.getProperty("API_KEY", "") // Return empty string if not found
+}
+
+val apiKey = getApiKeyFromLocalProperties()
 android {
     namespace = "com.example.mealplanner"
     compileSdk = 35
@@ -18,7 +33,17 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Add API Key as a build config field
+        buildConfigField("String", "API_KEY", "\"${apiKey}\"")
+
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+
 
     buildTypes {
         release {
@@ -73,6 +98,10 @@ dependencies {
     implementation("androidx.room:room-ktx:2.5.0")
 
 
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    kapt("com.github.bumptech.glide:compiler:4.15.1")
 
 
 }
