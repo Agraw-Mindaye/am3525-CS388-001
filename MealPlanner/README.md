@@ -31,11 +31,11 @@
 1. - [x] Login/SignUp: Users can login and/or sign up with an account
 2. - [x] Meal Plan Creation: Users can create a meal plan by creating recipes and adding them to specific days
 3. - [x] Nutritional Information: Each recipe displays nutritional details
-4. - [ ] Shopping List Generator: Users can generate shopping list based on meal plan
+4. - [x] Shopping List Generator: Users can generate shopping list based on meal plan
 
 **Optional Features**
 
-1. - [ ] Recipe Search: Users can search for a previously created meal by entering ingredients 
+1. - [x] Recipe Search: Users can search for an onlien recipe
 2. - [ ] Notifications: Users can set reminders to prepare meals and/or shop for ingredients
 3. - [ ] Offline mode: Users can access their meal plans regardless of internet connection
 
@@ -133,18 +133,19 @@ Note that these should include the updated issues you worked on for this sprint 
 <!--- List the completed user stories from this unit -->
 
 1. **Create functionality for shopping list**  <br>
-    ***Added functionality for users to be able to gnerate a shopping list based on a saved meal plan*** <br
+    ***Added functionality for users to be able to gnerate a shopping list based on a saved meal plan*** <br>
 2. **Create functionality for recipe search**:  <br>
    ***Added functionality for users to search for on online recipe*** <br>
 
 - List any pending user stories / any user stories you decided to cut from the original requirements
 
 1. **Create functionality for recipe search**:  <br>
-    ***This functionality wasn't cut, but it was changed to show online recipes instead of user-created recipes*** <br
+    ***This functionality wasn't cut, but it was changed to show online recipes instead of user-created recipes*** <br>
 
 [Add video/gif of your current application that shows build progress]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+- <img src='Milestone3Progress.gif' width=600>
 
 ## App Demo Video
 
 - Embed the YouTube/Vimeo link of your Completed Demo Day prep video
+  [Demo Day Prep Video] https://youtu.be/0v4vDjgvPKY
