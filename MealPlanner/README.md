@@ -14,12 +14,12 @@
 
 ### App Evaluation
 
-- **Category:** Health & Wellness
-- **Mobile:** Mobile is essential for planning meals on the go and referencing shopping lists in stores.
-- **Story:**  Helps manage personal finances and encourages financial responsibility by showing users where they spend the most.
-- **Market**: College students, young professionals, and just about anyone seeking to manage their budget effectively.
-- **Habit**: Users log expenses throughout the day and check weekly summaries.
-- **Scope**: V1 would allow users to input expenses and categorize them. V2 could generate charts and graphs for trends. V3 might add receipt scanning. V4 could integrate with bank accounts for automatic categorization.
+  - **Category**: Health & Wellness
+	- **Mobile**: Mobile is essential for planning meals on the go and referencing shopping lists in stores.
+	- **Story**: The app simplifies meal preparation, saves time, and encourages healthier eating habits.
+	- **Market**: Targeted towards families, busy individuals, or anyaone looking to eat healthier.
+	- **Habit**: Users interact with the app weekly to plan meals and daily to track nutrition.
+	- **Scope**: V1 would allow users to create meal plans and shopping lists. V2 could add nutritional tracking. V3 might include recipe recommendations based on dietary preferences.
 
 
 ## Product Spec
