@@ -1,5 +1,9 @@
 # Milestone 1 - Meal Planner (Unit 7)
 
+## Project Requirements
+- [CS388 Project Requirements](ProjectRequirements.md)
+
+
 ## Table of Contents
 
 1. [Overview](#Overview)
@@ -148,4 +152,4 @@ Note that these should include the updated issues you worked on for this sprint 
 ## App Demo Video
 
 - Embed the YouTube/Vimeo link of your Completed Demo Day prep video
-  [Demo Day Prep Video] https://youtu.be/0v4vDjgvPKY
+  - [Demo Day Prep Video] https://youtu.be/0v4vDjgvPKY
