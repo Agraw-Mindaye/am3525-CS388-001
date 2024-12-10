@@ -11,7 +11,7 @@
    - **Secondary Features**: Include at least 3 additional features that enhance the app (e.g., notifications, social sharing, customizable settings).
        - [x] *Shopping List Generator*
        - [ ] *Notifications*
-       - [ ] *Offline Mode*
+       - [x] *Offline Mode*
 
 2. **Firebase Integration**:
    - Use **Firebase** for at least one key functionality:
