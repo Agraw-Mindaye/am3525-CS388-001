@@ -33,7 +33,13 @@
 
 5. **Navigation**:
    - **Tab Navigation**: Include at least two primary navigation tabs for easy access to main features.
+      -  [x] **Recipes Tab**
+      -  [x] **Meals Tab**
+      -  [x] **Settings Tab**
    - **Flow Navigation**: Implement structured navigation flows (e.g., detail screens, screen transitions).
+      -  [x] **Login/SignUp Screen --> Recipes Screen**
+      -  [x] **Meals Screen --> Save a Recipe Screen**
+      -  [x] **Meals Screen --> Generate Shopping List SCreen**
 
 6. **Screen Archetypes**:
    - Design with at least three main screen types (e.g., Home, Profile, Detail) to cover the core functions and ensure a clear user journey.
