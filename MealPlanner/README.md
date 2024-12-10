@@ -40,7 +40,7 @@
 
 1. - [x] Recipe Search: Users can search for an onlien recipe
 2. - [ ] Notifications: Users can set reminders to prepare meals and/or shop for ingredients
-3. - [ ] Offline mode: Users can access their meal plans regardless of internet connection
+3. - [x] Offline mode: Users can access their meal plans regardless of internet connection
 
 ### 2. Screen Archetypes
 
