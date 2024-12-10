@@ -6,10 +6,10 @@
    - **Required Features**: Implement at least 3 essential features critical to your app's main purpose (e.g., login, search, item management).
        - [x] *Login/Signup*
        - [x] *Recipe Creation/Addition*
-       - [x] *Recipe Search*
+       - [x] *Shopping List Generator*
        
    - **Secondary Features**: Include at least 3 additional features that enhance the app (e.g., notifications, social sharing, customizable settings).
-       - [x] *Shopping List Generator*
+       - [x] *Recipe Search*
        - [ ] *Notifications*
        - [x] *Offline Mode*
 
